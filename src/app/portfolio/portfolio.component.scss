@@ -1,0 +1,114 @@
+h2 {
+  text-align: center;
+  font-family: "Baloo Paaji", cursive;
+  font-weight: bold;
+  font-size: 2.5vw;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+.cardBox {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  place-items: center;
+  overflow: hidden;
+  margin-top: 3%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(56, 56, 56, 0.692);
+}
+
+
+#about-me-container {
+  opacity: 0; /* initial opacity */
+  transition: opacity 2.5s; /* transition duration */
+}
+
+#about-me-container.fade-in {
+  opacity: 1; /* final opacity */
+}
+.card {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(216, 214, 214, 0.315);
+  background-repeat: no-repeat;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+
+  cursor: pointer;
+}
+.cardBox:hover{
+  border-radius: 15px;
+  box-shadow: 0px 10px 12px rgba(56, 56, 56, 0.692);
+}
+@media (max-width:346px) {
+  *{
+    overflow: hidden;
+  }
+  .card{
+    margin-left: -5%;
+    height: 300px;
+  }
+  .card img{
+    width: 100px;
+    height:550px;
+  }
+  
+ 
+}
+.card img {
+  
+  vertical-align: middle;
+  margin-top: 6%;
+}
+p{
+  text-align: center;
+  font-family: "Baloo Paaji", cursive;
+}
+.card h5{
+
+        margin-top: 5%;
+        font-family: 'Baloo Paaji', cursive;
+        font-weight: 580;
+        padding: 2%;
+        font-size: 1.5vw;
+}
+@media (max-width:560px) {
+  .card h5{
+
+    margin-top: 0;
+    font-family: 'Baloo Paaji', cursive;
+    font-weight: 580;
+    padding: 2%;
+    font-size:3vw;
+}
+h2{
+  font-size: 3vw;
+}
+
+}
+.card .content {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.card:hover{
+  
+  box-shadow: 0px 10px 12px rgba(20, 20, 20, 0.692);
+}
+
+.card:hover .content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card:hover h5,
+.card:hover img {
+  display: none;
+}
+h6{
+  font-weight: 700;
+}

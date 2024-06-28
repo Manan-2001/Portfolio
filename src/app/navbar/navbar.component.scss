@@ -1,0 +1,36 @@
+
+  button{
+    width: fit-content;
+    height: fit-content;
+    font-size: 4vw;
+  }
+.navbar-brand{
+    font-size: 4vw;
+    font-family: 'Baloo Paaji', cursive;
+    font-weight: bold;
+    background: linear-gradient(to right, #555454, #03a5e6); /* Define your gradient colors here */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 4px 5px rgba(49, 49, 49, 0.3);
+}
+
+li{
+    font-size: 1.9vw;
+}
+li:hover{
+    background: linear-gradient(to right,#03a5e6, #555454 ); /* Define your gradient colors here */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+ul{
+    margin-left: 20%;
+    
+}
+
+
+@media (max-width:840px)  {
+    ul{
+        margin-left: 0;
+    }
+}
+
