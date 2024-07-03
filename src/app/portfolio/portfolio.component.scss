@@ -2,7 +2,9 @@ h2 {
   text-align: center;
   font-family: "Baloo Paaji", cursive;
   font-weight: bold;
-  font-size: 2.5vw;
+  font-size: 2.5vw; 
+  
+  color: rgb(212, 212, 212);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
@@ -15,13 +17,13 @@ h2 {
   overflow: hidden;
   margin-top: 3%;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(56, 56, 56, 0.692);
+  box-shadow: 4px 8px 8px  rgba(190, 235, 243, 0.692);
 }
 
 
 #about-me-container {
   opacity: 0; /* initial opacity */
-  transition: opacity 2.5s; /* transition duration */
+  transition: opacity 5s; /* transition duration */
 }
 
 #about-me-container.fade-in {
@@ -31,7 +33,7 @@ h2 {
   position: absolute;
   width: 300px;
   height: 300px;
-  background-color: rgba(216, 214, 214, 0.315);
+  background-color: rgba(226, 223, 223, 0.829);
   background-repeat: no-repeat;
   align-items: center;
   text-align: center;
@@ -42,7 +44,7 @@ h2 {
 }
 .cardBox:hover{
   border-radius: 15px;
-  box-shadow: 0px 10px 12px rgba(56, 56, 56, 0.692);
+  box-shadow: 8px 10px 12px rgba(159, 201, 197, 0.822);
 }
 @media (max-width:346px) {
   *{

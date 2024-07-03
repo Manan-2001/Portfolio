@@ -3,6 +3,7 @@ h2 {
   font-family: "Baloo Paaji", cursive;
   font-weight: bold;
   font-size: 1.8rem;
+  color: rgb(212, 212, 212);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
@@ -15,12 +16,13 @@ h2 {
   overflow: hidden;
   margin-top: 3%;
   border-radius: 10px;
-  box-shadow: 0px 8px 14px rgba(56, 56, 56, 0.692);
+  box-shadow: 4px 8px 8px  rgba(190, 235, 243, 0.692);
+  
 }
 
 #about-me-container {
   opacity: 0; /* initial opacity */
-  transition: opacity 2.5s; /* transition duration */
+  transition: opacity 5s; /* transition duration */
  }
 
 #about-me-container.fade-in {
@@ -48,7 +50,7 @@ h2 {
 }
 .PGAV:hover{
   background-image: none;
-  background-color: rgba(211, 211, 211, 0.322);
+   background-color: rgba(247, 246, 246, 0.932);
 }
 .Cafe{
   background-image:url('/assets/SelfIntro/MochaManiaCafe.png');
@@ -58,10 +60,12 @@ h2 {
 }
 .Cafe:hover{
   background-image: none;
-  background-color: rgba(211, 211, 211, 0.322);
+  background-color: rgba(247, 246, 246, 0.932);
+  
 }
 .cardBox:hover{
-  box-shadow: 0px 12px 14px rgba(17, 56, 97, 0.863);
+  
+  box-shadow: 8px 10px 12px rgba(159, 201, 197, 0.822);
 }
 @media (max-width:346px) {
   *{
@@ -88,6 +92,7 @@ h2 {
 .p{
   text-align: center;
   font-family: "Baloo Paaji", cursive;
+  color: rgb(190, 190, 190);
   font-size: 1rem;
 }
 .box>.cardBox>.card>.content>p{
@@ -102,7 +107,7 @@ h2 {
 }
 .margh5{
 text-align: center;
-  
+  color: whitesmoke;
   margin-top: 2%;
 }
 .Health_PLUS{
@@ -112,11 +117,13 @@ text-align: center;
 }
 .Health_PLUS:hover{
   background-image: none;
-  background-color: rgba(211, 211, 211, 0.322);
+  background-color: rgba(247, 246, 246, 0.932);
+
 }
 .margh5Mocha{
   margin-left: 15%;
-  
+  text-shadow: 0.07rem 0.07rem rgb(207, 207, 207);
+  color: white;
   margin-top: 2%;
 }
 @media (max-width:992px) {
@@ -128,6 +135,12 @@ text-align: center;
     margin-left: 0;
     margin-top: 2%;
   }
+  .margh5{
+    margin-left: 0;
+    margin-top: 2%;
+    text-align: left;
+    padding-left: 0;
+  }
 }
  h5{
 
@@ -138,7 +151,7 @@ text-align: center;
         // text-align: center;
         color: rgb(65, 65, 65);
         font-size: 1rem;
-        text-shadow: 0.07rem 0.07rem #030303;
+        text-shadow: 0.06rem 0.06rem #030303;
         
         
 }
@@ -150,6 +163,7 @@ text-align: center;
     font-weight: 580;
     padding: 2%;
     font-size:3vw;
+    margin-left: 0;
 }
 
 }
@@ -179,8 +193,35 @@ h6{
   font-size: 0.85rem;
   text-align: center;
 }
+.RestAPI{
+  
+  background-image:url('/assets/SelfIntro/EmployeeManagementRestAPI.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.RestAPI:hover{
+  background-image: none;  
+  background-color:  rgba(247, 246, 246, 0.932);
 
-
+}
+.Sports{
+  background-image: url('/assets/SelfIntro/Sports Activity Recognition System.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.Sports:hover{
+  background-image: none;  
+  background-color: rgba(247, 246, 246, 0.932);
+}
+.Expense{
+  background-image: url('/assets/SelfIntro/ExpenseManager.jpeg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.Expense:hover{
+  background-image: none;  
+  background-color: rgba(247, 246, 246, 0.932);
+}
 .bg{
   background-color:  linear-gradient(45deg, rgb(212, 244, 255), rgb(43, 42, 42));
   box-shadow: 0 8px 12px 8px  rgba(130, 130, 131, 0.637);

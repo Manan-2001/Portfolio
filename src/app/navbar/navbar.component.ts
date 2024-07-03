@@ -8,9 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  isTogglerActive: boolean = false;
-
-  toggleButton() {
-    this.isTogglerActive = !this.isTogglerActive;
-  }
+  
 }

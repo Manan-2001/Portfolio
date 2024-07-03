@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MochaManiaCafeComponent } from './mocha-mania-cafe.component';
+import { WorkexperienceComponent } from './workexperience.component';
 
-describe('MochaManiaCafeComponent', () => {
-  let component: MochaManiaCafeComponent;
-  let fixture: ComponentFixture<MochaManiaCafeComponent>;
+describe('WorkexperienceComponent', () => {
+  let component: WorkexperienceComponent;
+  let fixture: ComponentFixture<WorkexperienceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MochaManiaCafeComponent]
+      imports: [WorkexperienceComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MochaManiaCafeComponent);
+    fixture = TestBed.createComponent(WorkexperienceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
