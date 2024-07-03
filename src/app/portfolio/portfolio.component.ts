@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import { SmoothScrollService } from '../smooth-scroll.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,8 +9,13 @@ import { AfterViewInit, Component, ElementRef } from '@angular/core';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent implements AfterViewInit{
-  constructor(private elementRef: ElementRef){
+  constructor(private elementRef: ElementRef,
+    private smoothScrollService: SmoothScrollService
+  ){}
 
+  
+  scrollTo(targetId: string): void {
+    this.smoothScrollService.scrollToElement(targetId);
   }
   ngAfterViewInit(): void {
    const aboutMeContainer = this.elementRef.nativeElement.querySelector('#about-me-container');
