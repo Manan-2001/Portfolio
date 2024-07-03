@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -8,23 +9,43 @@ import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent  implements AfterViewInit{
-  constructor(private el: ElementRef, private renderer: Renderer2){}
+  private observer!: IntersectionObserver;
+
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) {}
+
   ngAfterViewInit() {
-    const contents = this.el.nativeElement.querySelectorAll('.content');
+    if (isPlatformBrowser(this.platformId)) {
+      const contents = this.el.nativeElement.querySelectorAll('.content');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.renderer.addClass(entry.target, 'float-bottom-to-top');
+      if (contents && contents.length > 0) {
+        try {
+          this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                this.renderer.addClass(entry.target, 'float-bottom-to-top');
+              }
+            });
+          }, {
+            threshold: 0.1
+          });
+
+          contents.forEach((content: Element) => {
+            this.observer.observe(content);
+          });
+        } catch (error) {
+          console.error('Error creating IntersectionObserver:', error);
         }
-      });
-    }, {
-      threshold: 0.1
-    });
-
-    contents.forEach((content: Element) => {
-      observer.observe(content);
-    });
+      }
+    }
   }
 
+  ngOnDestroy(): void {
+    if (isPlatformBrowser(this.platformId) && this.observer) {
+      this.observer.disconnect();
+    }
+  }
 }

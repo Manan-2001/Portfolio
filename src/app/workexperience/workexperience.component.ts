@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-workexperience',
@@ -8,22 +9,33 @@ import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
   styleUrl: './workexperience.component.scss'
 })
 export class WorkexperienceComponent implements AfterViewInit {
-  constructor(private el: ElementRef, private renderer: Renderer2){}
+  private observer!: IntersectionObserver;
+
+  constructor(private el: ElementRef, private renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: object) {}
+
   ngAfterViewInit() {
-    const contents = this.el.nativeElement.querySelectorAll('.content');
+    if (isPlatformBrowser(this.platformId)) {
+      const contents = this.el.nativeElement.querySelectorAll('.content');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.renderer.addClass(entry.target, 'float-right-to-left');
-        }
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.renderer.addClass(entry.target, 'float-right-to-left');
+          }
+        });
+      }, {
+        threshold: 0.1
       });
-    }, {
-      threshold: 0.1
-    });
 
-    contents.forEach((content: Element) => {
-      observer.observe(content);
-    });
+      contents.forEach((content: Element) => {
+        this.observer.observe(content);
+      });
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 }

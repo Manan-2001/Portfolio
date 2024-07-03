@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { SelfIntroComponent } from "./self-intro/self-intro.component";
 import { AboutComponent } from "./about/about.component";
-import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProjectComponent } from "./project/project.component";
-import { ContactComponent } from "./contact/contact.component";
+import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { SkillsComponent } from "./skills/skills.component";
 import { WorkexperienceComponent } from "./workexperience/workexperience.component";
+
+import { ContactComponent } from "./contact/contact.component";
 
 @Component({
     selector: 'app-root',
@@ -20,15 +21,4 @@ import { WorkexperienceComponent } from "./workexperience/workexperience.compone
 export class AppComponent {
   title = 'Portfolio';
 
-  // cursorX= 0;
-  // cursorY = 0;
-  // backgroundGradient: string = 'linear-gradient(to bottom right, #86E5F0, #3D92F3)';
-
-  // onMouseMove(event: MouseEvent) {
-  //   this.cursorX = event.clientX;
-  //   this.cursorY = event.clientY;
-  //   const x = event.clientX / window.innerWidth;
-  //   const y = event.clientY / window.innerHeight;
-  //   this.backgroundGradient = `linear-gradient(to bottom right, rgba(0, 128, 128, ${1 - y}), rgba(0, 0, 128, ${x}))`;
-  // }
 }

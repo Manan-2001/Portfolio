@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -8,24 +9,34 @@ import { AfterViewInit, Component, ElementRef } from '@angular/core';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent implements AfterViewInit{
+  private scrollHandler!: () => void;
 
- 
- constructor(private elementRef: ElementRef){
+  constructor(private elementRef: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
 
- }
- ngAfterViewInit(): void {
-  const aboutMeContainer = this.elementRef.nativeElement.querySelector('#about-me-container');
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const aboutMeContainer = this.elementRef.nativeElement.querySelector('#about-me-container');
 
-  window.addEventListener('scroll', () => {
-    const rect = aboutMeContainer.getBoundingClientRect();
-    const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
+      if (aboutMeContainer) {
+        this.scrollHandler = () => {
+          const rect = aboutMeContainer.getBoundingClientRect();
+          const isInView = rect.top <= window.innerHeight && rect.bottom >= 0;
 
-    if (isInView) {
-      aboutMeContainer.classList.add('fade-in');
-    } else {
-      aboutMeContainer.classList.remove('fade-in');
+          if (isInView) {
+            aboutMeContainer.classList.add('fade-in');
+          } else {
+            aboutMeContainer.classList.remove('fade-in');
+          }
+        };
+
+        window.addEventListener('scroll', this.scrollHandler);
+      }
     }
-  });
-}
+  }
 
+  ngOnDestroy(): void {
+    if (isPlatformBrowser(this.platformId) && this.scrollHandler) {
+      window.removeEventListener('scroll', this.scrollHandler);
+    }
+  }
 }
