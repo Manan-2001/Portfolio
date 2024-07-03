@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-project',
@@ -7,7 +7,7 @@ import { Component, ElementRef } from '@angular/core';
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })
-export class ProjectComponent {
+export class ProjectComponent  implements AfterViewInit{
   constructor(private elementRef: ElementRef)
 {}
   ngAfterViewInit(): void {

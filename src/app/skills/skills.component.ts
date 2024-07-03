@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
@@ -7,7 +7,7 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
-export class SkillsComponent {
+export class SkillsComponent  implements AfterViewInit{
   constructor(private el: ElementRef, private renderer: Renderer2){}
   ngAfterViewInit() {
     const contents = this.el.nativeElement.querySelectorAll('.content');

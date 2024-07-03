@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -7,7 +7,7 @@ import { Component, ElementRef } from '@angular/core';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
-export class AboutComponent {
+export class AboutComponent implements AfterViewInit{
 
  
  constructor(private elementRef: ElementRef){
