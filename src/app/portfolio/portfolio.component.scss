@@ -112,3 +112,17 @@ p{
 h6{
   font-weight: 700;
 }
+#frontD{
+  border-radius: 15px;
+  box-shadow: 3px 4px 4px rgb(153, 235, 255);
+  border-left: 1px dashed rgb(153, 235, 255);
+}
+#frontD>h5{
+  color: white;
+  padding: 1%;
+}
+#frontD> p{
+  color: whitesmoke;
+  padding: 1%;
+  text-align: justify;
+}
