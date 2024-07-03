@@ -1,11 +1,11 @@
 <div class="container-fluid" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
  
     <!-- <app-navbar></app-navbar> -->
-    <nav class="navbar navbar-expand-sm " >
+    <!-- <nav class="navbar navbar-expand-sm " >
       <div class="container-fluid">
         <a class="navbar-brand" href="">PORFOLIO</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"   >
-          <span class="navbar-toggler-icon"  ></span>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"   >
+          <span class="navbar-toggler-icon "  ></span>
         </button>
         <div class="collapse navbar-collapse" id="mynavbar" >
           <ul class="navbar-nav me-auto" style="font-weight: 600;">
@@ -34,13 +34,38 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
+
+
+    <div class="offcanvas-menu">
+      <input type="checkbox" id="toogle-menu" />
+    
+      <label  for="toogle-menu" class="toogle-open"><span></span></label>
+     
+      <nav>
+        <div style="background-color: #bdddff;">
+          <a href="#" style="background-color: #bdddff;"> <i class="fab fa-css3-alt"></i>PORTFOLIO </a>
+          <label for="toogle-menu" class="toogle-close" style="background-color: #bdddff;">
+            <span></span>
+          </label>
+        </div>
+        <ul >
+          <li style="background-color: #bdddff;" ><a style="background-color: #bdddff;"  href="#Home">Home </a></li>
+          <li style="background-color: #bdddff;" ><a style="background-color: #bdddff;" href="#About">About </a></li>
+          <li style="background-color: #bdddff;" ><a style="background-color: #bdddff;" href="/assets/SelfIntro/Resume.pdf" target="_blank">Resume/CV </a></li>
+          <li style="background-color: #bdddff;" ><a style="background-color: #bdddff;" href="#Portfolio">Portfolio </a></li>
+          <li style="background-color: #bdddff;" ><a style="background-color: #bdddff;" href="#Projects">Projects </a></li>
+          <li style="background-color: #bdddff;" ><a style="background-color: #bdddff;" href="#Contact">Contact </a></li>
+          <li style="background-color: #bdddff;" ><a style="background-color: #bdddff;" href="#Skills">Skills </a></li>
+        </ul>
+      </nav>
+    </div>
 
 
     <app-self-intro id="Home"></app-self-intro>
     <app-about id="About"></app-about>
     <br /><br />
-    <app-workexperience></app-workexperience>
+    <app-workexperience></app-workexperience >
     <br>
     <app-portfolio id="Portfolio"></app-portfolio>
     <br />
